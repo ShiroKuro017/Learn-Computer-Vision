@@ -1,69 +1,69 @@
 # Learn Computer Vision
 
-Repositori pembelajaran Computer Vision yang berfokus pada implementasi praktis menggunakan framework deep learning terkini. Materi pembelajaran dirancang untuk pemula hingga menengah yang ingin menguasai konsep dan aplikasi computer vision, khususnya dalam deteksi objek dan analisis wajah.
+A practical computer vision learning repository focused on implementation using cutting-edge deep learning frameworks. The learning materials are designed for beginners to intermediate learners who want to master concepts and applications of computer vision, particularly in object detection and facial analysis.
 
-## 📋 Daftar Isi
+## 📋 Table of Contents
 
-- [Fitur Utama](#fitur-utama)
-- [Prasyarat](#prasyarat)
-- [Setup Lingkungan](#setup-lingkungan)
-- [Struktur Kursus](#struktur-kursus)
-- [Cara Menggunakan](#cara-menggunakan)
-- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
-- [Kontribusi](#kontribusi)
+- [Key Features](#key-features)
+- [Prerequisites](#prerequisites)
+- [Environment Setup](#environment-setup)
+- [Course Structure](#course-structure)
+- [How to Use](#how-to-use)
+- [Technologies Used](#technologies-used)
+- [Contribution](#contribution)
 
-## ✨ Fitur Utama
+## ✨ Key Features
 
-- **Setup Lingkungan Deep Learning**: Panduan lengkap instalasi TensorFlow dengan dukungan GPU
-- **Deteksi Emosi Real-time**: Implementasi YOLOv5 untuk mendeteksi emosi pada wajah manusia
-- **Model Pra-latih**: Menggunakan model YOLOv5 yang sudah terlatih untuk akselerasi pembelajaran
-- **Jupyter Notebook**: Semua materi tersedia dalam format notebook interaktif untuk pembelajaran berkelanjutan
-- **Simpan dan Muat Model**: Fungsi untuk menyimpan dan memuat model terlatih
+- **Deep Learning Environment Setup**: Comprehensive guide for installing TensorFlow with GPU support
+- **Real-time Emotion Detection**: Implementation of YOLOv5 for detecting emotions on human faces
+- **Pre-trained Models**: Utilizes pre-trained YOLOv5 models to accelerate the learning process
+- **Jupyter Notebooks**: All learning materials are available in interactive notebook format for continuous learning
+- **Model Persistence**: Functions to save and load trained models for inference and fine-tuning
 
-## 🔧 Prasyarat
+## 🔧 Prerequisites
 
-Sebelum memulai, pastikan sistem Anda memenuhi persyaratan berikut:
+Before starting, ensure your system meets the following requirements:
 
-- **Python 3.8 atau lebih tinggi**
+- **Python 3.8 or higher**
 - **pip** (Python package manager)
-- **GPU NVIDIA** (opsional, tetapi disarankan untuk performa optimal)
-- **CUDA Toolkit** dan **cuDNN** (jika menggunakan GPU)
-- **Jupyter Notebook** atau **JupyterLab**
+- **NVIDIA GPU** (optional, but recommended for optimal performance)
+- **CUDA Toolkit** and **cuDNN** (if using GPU)
+- **Jupyter Notebook** or **JupyterLab**
 
-### Verifikasi Instalasi Python
+### Verify Python Installation
 
 ```bash
 python --version
 pip --version
 ```
 
-## 🚀 Setup Lingkungan
+## 🚀 Environment Setup
 
-### 1. Clone Repositori
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/ShiroKuro017/Learn-Computer-Vision.git
 cd Learn-Computer-Vision
 ```
 
-### 2. Buat Virtual Environment
+### 2. Create Virtual Environment
 
 ```bash
-# Menggunakan venv
+# Using venv
 python -m venv venv
 
-# Aktivasi virtual environment
-# Untuk Windows:
+# Activate virtual environment
+# For Windows:
 venv\Scripts\activate
-# Untuk macOS/Linux:
+# For macOS/Linux:
 source venv/bin/activate
 ```
 
-### 3. Instalasi Dependencies
+### 3. Install Dependencies
 
-Buka notebook `Install TensorFlow w GPU.ipynb` dan ikuti langkah-langkah instalasi untuk mengatur TensorFlow dengan dukungan GPU atau CPU sesuai kebutuhan.
+Open the notebook `Install TensorFlow w GPU.ipynb` and follow the installation steps to configure TensorFlow with GPU or CPU support based on your requirements.
 
-Alternatif, instal dependencies secara manual:
+Alternatively, install dependencies manually:
 
 ```bash
 pip install tensorflow
@@ -74,9 +74,9 @@ pip install opencv-python
 pip install numpy pandas matplotlib
 ```
 
-### 4. Verifikasi Instalasi
+### 4. Verify Installation
 
-Jalankan snippet berikut untuk memverifikasi TensorFlow terdeteksi GPU:
+Run the following snippet to verify TensorFlow GPU detection:
 
 ```python
 import tensorflow as tf
@@ -84,45 +84,45 @@ print("GPU Available:", tf.test.is_built_with_cuda())
 print("Physical GPUs:", len(tf.config.list_physical_devices('GPU')))
 ```
 
-## 📚 Struktur Kursus
+## 📚 Course Structure
 
-Repositori ini terstruktur dalam modul-modul pembelajaran berikut:
+The repository is structured in the following learning modules:
 
-### Modul 1: Persiapan Lingkungan
+### Module 1: Environment Preparation
 **File**: `Install TensorFlow w GPU.ipynb`
 
-Materi pembelajaran mencakup:
-- Instalasi TensorFlow dengan dukungan GPU
-- Konfigurasi CUDA dan cuDNN
-- Verifikasi lingkungan development
-- Troubleshooting masalah instalasi umum
+Learning materials include:
+- Installation of TensorFlow with GPU support
+- CUDA and cuDNN configuration
+- Development environment verification
+- Troubleshooting common installation issues
 
-### Modul 2: Deteksi Emosi dengan YOLOv5
+### Module 2: Emotion Detection with YOLOv5
 **File**: `Emotion-Detection.ipynb`
 
-Materi pembelajaran mencakup:
-- Pengenalan arsitektur YOLOv5
-- Deteksi wajah real-time
-- Ekstraksi fitur emosi dari wajah
-- Implementasi pipeline lengkap deteksi emosi
-- Fungsi simpan dan muat model terlatih
-- Optimisasi performa pada berbagai hardware
+Learning materials include:
+- Introduction to YOLOv5 architecture
+- Real-time face detection
+- Emotion feature extraction from faces
+- Complete emotion detection pipeline implementation
+- Functions to save and load trained models
+- Performance optimization across various hardware
 
-### Folder Models
-**Direktori**: `models/`
+### Models Folder
+**Directory**: `models/`
 
-Penyimpanan model-model terlatih yang dapat digunakan untuk inference atau fine-tuning lebih lanjut.
+Storage for trained models that can be used for inference or further fine-tuning.
 
-### Model Pra-latih
+### Pre-trained Model
 **File**: `yolov5s.pt`
 
-Model YOLOv5 small yang sudah terlatih pada dataset COCO untuk deteksi objek dan wajah. File ini digunakan dalam notebook Emotion-Detection.
+YOLOv5 small model pre-trained on COCO dataset for object and face detection. This file is utilized in the Emotion-Detection notebook.
 
-## 💻 Cara Menggunakan
+## 💻 How to Use
 
-### Menjalankan Notebook
+### Running Notebooks
 
-1. **Aktifkan Virtual Environment**:
+1. **Activate Virtual Environment**:
    ```bash
    # Windows
    venv\Scripts\activate
@@ -130,22 +130,22 @@ Model YOLOv5 small yang sudah terlatih pada dataset COCO untuk deteksi objek dan
    source venv/bin/activate
    ```
 
-2. **Jalankan Jupyter Notebook**:
+2. **Launch Jupyter Notebook**:
    ```bash
    jupyter notebook
    ```
 
-3. **Navigasi ke Notebook yang Ingin Dipelajari**:
-   - Mulai dengan `Install TensorFlow w GPU.ipynb` untuk setup
-   - Lanjutkan dengan `Emotion-Detection.ipynb` untuk praktek deteksi emosi
+3. **Navigate to the Notebook You Want to Learn**:
+   - Start with `Install TensorFlow w GPU.ipynb` for setup
+   - Continue with `Emotion-Detection.ipynb` for practical emotion detection
 
-4. **Jalankan Cell-Cell secara Berurutan**:
-   - Tekan `Shift + Enter` untuk menjalankan cell
-   - Perhatikan output dan hasil visualisasi
+4. **Execute Cells Sequentially**:
+   - Press `Shift + Enter` to run a cell
+   - Pay attention to outputs and visualizations
 
-### Contoh Penggunaan Dasar
+### Basic Usage Example
 
-Setelah menyelesaikan setup, Anda dapat menggunakan model untuk deteksi emosi:
+After completing the setup, you can use the model for emotion detection:
 
 ```python
 # Import dependencies
@@ -155,64 +155,64 @@ import cv2
 # Load model
 model = yolov5.load('yolov5s.pt')
 
-# Jalankan deteksi pada gambar
+# Run detection on image
 results = model('path/to/image.jpg')
 
-# Tampilkan hasil
+# Display results
 results.show()
 ```
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Technologies Used
 
-| Teknologi | Versi | Kegunaan |
-|-----------|-------|----------|
-| Python | 3.8+ | Bahasa pemrograman utama |
-| TensorFlow | 2.x | Framework deep learning |
-| PyTorch | Latest | Alternatif framework deep learning |
-| YOLOv5 | Latest | Arsitektur deteksi objek |
-| OpenCV | 4.x | Pemrosesan gambar dan video |
-| Jupyter | Latest | Environment notebook interaktif |
-| NumPy | Latest | Komputasi numerik |
-| Pandas | Latest | Manipulasi data |
-| Matplotlib | Latest | Visualisasi data |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| Python | 3.8+ | Primary programming language |
+| TensorFlow | 2.x | Deep learning framework |
+| PyTorch | Latest | Alternative deep learning framework |
+| YOLOv5 | Latest | Object detection architecture |
+| OpenCV | 4.x | Image and video processing |
+| Jupyter | Latest | Interactive notebook environment |
+| NumPy | Latest | Numerical computing |
+| Pandas | Latest | Data manipulation |
+| Matplotlib | Latest | Data visualization |
 
-## 🎓 Learning Path yang Disarankan
+## 🎓 Recommended Learning Path
 
-Untuk hasil pembelajaran optimal, ikuti urutan berikut:
+For optimal learning outcomes, follow this sequence:
 
-1. **Minggu 1**: Setup lingkungan dan verifikasi instalasi
-   - Jalankan `Install TensorFlow w GPU.ipynb`
-   - Pastikan semua dependencies terinstal dengan baik
+1. **Week 1**: Environment setup and installation verification
+   - Execute `Install TensorFlow w GPU.ipynb`
+   - Ensure all dependencies are properly installed
    
-2. **Minggu 2-3**: Pemahaman konsep YOLOv5
-   - Pelajari arsitektur dan cara kerja YOLOv5
-   - Pahami konsep deteksi objek real-time
+2. **Week 2-3**: Understanding YOLOv5 concepts
+   - Learn YOLOv5 architecture and methodology
+   - Understand real-time object detection principles
    
-3. **Minggu 4-5**: Implementasi Emotion Detection
-   - Jalankan `Emotion-Detection.ipynb` secara menyeluruh
-   - Eksperimen dengan berbagai input gambar dan video
+3. **Week 4-5**: Implementing Emotion Detection
+   - Execute `Emotion-Detection.ipynb` thoroughly
+   - Experiment with various image and video inputs
    
-4. **Minggu 6+**: Eksplorasi dan Pengembangan Lanjut
-   - Fine-tune model untuk use case spesifik
-   - Integrasikan ke aplikasi real-world
-   - Eksperimen dengan dataset custom
+4. **Week 6+**: Advanced Exploration and Development
+   - Fine-tune models for specific use cases
+   - Integrate into real-world applications
+   - Experiment with custom datasets
 
-## 📝 Catatan Penting
+## 📝 Important Notes
 
-- **GPU vs CPU**: Proses training dan inference jauh lebih cepat dengan GPU. Jika tidak memiliki GPU NVIDIA, gunakan Google Colab untuk akses GPU gratis.
-- **Model Size**: File `yolov5s.pt` berukuran beberapa ratus MB. Pastikan memiliki space storage yang cukup.
-- **Dokumentasi**: Setiap notebook berisi dokumentasi inline dan penjelasan code untuk memudahkan pembelajaran.
-- **Compatibility**: Verifikasi versi library Anda kompatibel dengan versi yang digunakan dalam notebook.
+- **GPU vs CPU**: Training and inference processes are significantly faster with GPU. If you do not have an NVIDIA GPU, use Google Colab for free GPU access.
+- **Model Size**: The `yolov5s.pt` file is several hundred megabytes. Ensure you have sufficient storage space.
+- **Documentation**: Each notebook contains inline documentation and code explanations to facilitate learning.
+- **Compatibility**: Verify that your library versions are compatible with those used in the notebooks.
 
 ## 🐛 Troubleshooting
 
 ### CUDA Not Available
 ```bash
-# Pastikan CUDA Toolkit terinstal
+# Verify CUDA Toolkit installation
 nvidia-smi
 
-# Update driver GPU
-# (Instruksi spesifik tergantung OS dan GPU)
+# Update GPU driver
+# (Specific instructions depend on OS and GPU)
 ```
 
 ### Import Error
@@ -221,52 +221,40 @@ nvidia-smi
 pip install --upgrade -r requirements.txt
 ```
 
-### Memory Error Saat Inference
-- Gunakan model yang lebih kecil (yolov5n.pt alih-alih yolov5l.pt)
-- Kurangi ukuran input gambar
-- Gunakan batch processing yang lebih kecil
+### Memory Error During Inference
+- Use a smaller model (yolov5n.pt instead of yolov5l.pt)
+- Reduce input image size
+- Use smaller batch processing sizes
 
-## 📂 Struktur Direktori
+## 📂 Directory Structure
 
 ```
 Learn-Computer-Vision/
-├── Install TensorFlow w GPU.ipynb      # Modul setup lingkungan
-├── Emotion-Detection.ipynb             # Modul deteksi emosi
-├── yolov5s.pt                          # Model pra-latih YOLOv5
-├── models/                             # Folder penyimpanan model custom
-└── README.md                           # File dokumentasi ini
+├── Install TensorFlow w GPU.ipynb      # Environment setup module
+├── Emotion-Detection.ipynb             # Emotion detection module
+├── yolov5s.pt                          # Pre-trained YOLOv5 model
+├── models/                             # Custom model storage folder
+└── README.md                           # This documentation file
 ```
 
-## 🤝 Kontribusi
+## 🤝 Contributing
 
-Kontribusi sangat diterima! Berikut cara berkontribusi:
+Contributions are highly welcome! Here is how to contribute:
 
-1. **Fork** repositori ini
-2. Buat **branch** fitur baru (`git checkout -b feature/AmazingFeature`)
-3. **Commit** perubahan Anda (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** ke branch (`git push origin feature/AmazingFeature`)
-5. Buka **Pull Request**
+1. **Fork** this repository
+2. Create a **feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. Open a **Pull Request**
 
-### Pedoman Kontribusi
+### Contribution Guidelines
 
-- Pastikan code mengikuti style konsisten
-- Tambahkan dokumentasi untuk fitur baru
-- Test sebelum submit pull request
-- Tulis commit message yang deskriptif
+- Ensure code follows consistent style conventions
+- Add documentation for new features
+- Test thoroughly before submitting pull requests
+- Write descriptive commit messages
 
-## 📄 Lisensi
-
-Repositori ini tersedia di bawah lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanjut.
-
-## 📞 Dukungan dan Pertanyaan
-
-Jika mengalami kesulitan atau memiliki pertanyaan:
-
-- **Issues**: Buka issue baru di GitHub dengan detail lengkap
-- **Discussions**: Gunakan discussions untuk pertanyaan umum
-- **Email**: Hubungi maintainer melalui GitHub profile
-
-## 🔗 Referensi Tambahan
+## 🔗 Additional References
 
 - [YOLOv5 Official Repository](https://github.com/ultralytics/yolov5)
 - [TensorFlow Documentation](https://www.tensorflow.org/)
@@ -275,6 +263,6 @@ Jika mengalami kesulitan atau memiliki pertanyaan:
 
 ---
 
-**Last Updated**: Desember 2025
+**Last Updated**: December 2025
 
-Selamat belajar! Jika repositori ini membantu, jangan lupa berikan ⭐ star.
+Happy learning! If this repository helps you, please give it a ⭐ star.
